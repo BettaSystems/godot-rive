@@ -56,7 +56,7 @@ def handle_fail(code: int):
 
 
 def update_rive():
-    subprocess.call(["git", "submodule", "update", "thirdparty/rive-cpp"], cwd="../")
+    subprocess.call(["git", "submodule", "update", "--init"], cwd="../thirdparty/rive-cpp")
 
 
 def build_rive(platform: str, target: str):
@@ -67,7 +67,7 @@ def build_rive(platform: str, target: str):
     )
     print(f"---{LIGHT_GREY}")
     update_rive()
-    args = ["sh", "build.sh"]
+    args = ["bash", "build.sh", "release"]
     if len(platform):
         args.append("-p")
         args.append(platform)

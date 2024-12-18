@@ -37,10 +37,17 @@ It makes use of the following third-party libraries:
 > These instructions are only tested on M1 MacOS. You may have to modify `build/build.py` or `build/SConstruct` for your system.
 
 The following must be installed:
-- Python 3
+- `python` in version 3
 - [git](https://git-scm.com/)
 - [scons](https://scons.org/)
 - [ninja](https://ninja-build.org/)
+- cmake
+- premake
+
+Using brew:
+```sh
+brew install python git scons ninja cmake premake
+```
 
 To build, run the following commands (from the root directory):
 ```bash
@@ -56,8 +63,7 @@ python build.py --help
 ## Installation
 
 > [!IMPORTANT]
-> If you are not on M1 MacOS, you will need to build the extension yourself. Binaries are only provided for MacOS universal (debug and release).
-> Eventually, binaries will be provided for other platforms.
+> You will have to compile it manually
 
 1. Copy `demo/bin/`, `demo/icons/`, and `demo/rive.gdextension` to your project folder
 2. Update the paths in `rive.gdextension` to match your project folder structure
